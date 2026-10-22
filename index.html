@@ -354,12 +354,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="stack">
         <h2>The Implant Story</h2>
         <p>A new chapter every other day. The story starts with what an implant is and why teeth matter, walks through our clinic and a real implant day, and ends with the advanced cases and the future of the field. Read it in order.</p>
-        <article class="featured" id="post-1">
-          <span class="label">Chapter 1 · Post 1 · Tue 20 Oct 2026</span>
-          <h3>The patient who made me an implant dentist</h3>
+        <article class="featured" id="latest-post">
+          <span class="label">Latest · Chapter 1 · Post 2 · Thu 22 Oct 2026</span>
+          <h3>What is a dental implant, really?</h3>
           <div class="body">
-            <p>Every implant dentist has a patient they still think about. Mine was 79, a cancer survivor, and had already been told that implants were not possible. His bone was too weak, he was told, and he was too old.</p>
-            <p><a href="blog/why-i-became-an-implant-dentist/">Read the full story</a></p>
+            <p>When I put a dental implant in a patient's hand, the reaction is almost always the same: "That's it?" Three parts, one small titanium post, and the reason it bonds to bone.</p>
+            <p><a href="blog/what-is-a-dental-implant/">Read the post</a> · <a href="blog/why-i-became-an-implant-dentist/">Start from post 1</a></p>
           </div>
         </article>
         <div class="chapters" id="chapters"></div>
@@ -471,6 +471,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       "Implants for medically complex patients",
       "The future: AI planning, robotics and what I'm learning next"]]
   ];
+  // Posts that are actually live; add each one when it is published
+  var live = { 1: "blog/why-i-became-an-implant-dentist/", 2: "blog/what-is-a-dental-implant/" };
   var today = new Date(); today.setHours(0,0,0,0);
   var fmt = function (d) { return d.toLocaleDateString("en-GB", { weekday: "short", day: "2-digit", month: "short", year: "numeric" }); };
   var root = document.getElementById("chapters");
@@ -484,12 +486,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     c[2].forEach(function (t) {
       var d = new Date(start); d.setDate(start.getDate() + 2 * n); n++;
       var li = document.createElement("li");
-      var st = d < today ? "Published" : "Upcoming";
-      if (d >= today && !nextMarked) { st = d.getTime() === today.getTime() ? "Today" : "Next"; li.className = "next"; nextMarked = true; }
+      var st = live[n] ? "Published" : "Upcoming";
+      if (!live[n] && !nextMarked) { st = d.getTime() === today.getTime() ? "Today" : "Next"; li.className = "next"; nextMarked = true; }
       li.innerHTML = '<span class="n"></span><span class="d"></span><span class="t"></span><span class="st"></span>';
       li.children[0].textContent = String(n).padStart(2, "0");
       li.children[1].textContent = fmt(d);
-      li.children[2].textContent = t;
+      if (live[n]) { var a = document.createElement("a"); a.href = live[n]; a.textContent = t; li.children[2].appendChild(a); } else { li.children[2].textContent = t; }
       li.children[3].textContent = st;
       ul.appendChild(li);
     });
