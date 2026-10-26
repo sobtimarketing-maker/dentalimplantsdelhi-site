@@ -1,2 +1,7 @@
-# Old pages from the previous site on this domain go to the home page
-/*    /    301
+# Old pages from the previous site on this domain now return a real 404 (404.html),
+# so Google drops them instead of treating mass redirects to home as soft 404s.
+# Only a few obvious home/blog aliases are redirected.
+/index.html   /        301
+/index.php    /        301
+/home         /        301
+/blog         /#blog   301
