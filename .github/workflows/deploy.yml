@@ -1,0 +1,44 @@
+# Publishes the site on GitHub Pages (free for public repositories) on every push to main.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site
+        run: |
+          mkdir _site
+          rsync -a --exclude '.git' --exclude '.github' --exclude '_site' \
+            --exclude 'README.md' --exclude '_redirects' ./ _site/
+          echo "dentalimplantsdelhi.com" > _site/CNAME
+          # GitHub Pages has no _redirects file, so the old aliases become redirect pages.
+          redirect() {
+            mkdir -p "_site/$1"
+            printf '<!doctype html><meta charset="utf-8"><title>Redirecting</title><link rel="canonical" href="https://dentalimplantsdelhi.com%s"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=%s"><a href="%s">Continue</a>\n' "$2" "$2" "$2" > "_site/$1/index.html"
+          }
+          redirect home /
+          redirect blog /#blog
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
