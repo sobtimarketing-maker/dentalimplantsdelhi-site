@@ -168,6 +168,24 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .byline img { width: 3rem; height: 3rem; border-radius: 50%; object-fit: cover; object-position: 50% 20%; }
 .next { border-top: 1px solid var(--line); padding-top: 1.2rem; margin-top: 1rem; }
 </style>
+<!-- Google Ads: counts taps on call and WhatsApp links as conversions -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18553206533"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18553206533');
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var h = a.getAttribute('href') || '';
+  if (h.indexOf('tel:') === 0) {
+    gtag('event', 'conversion', {send_to: 'AW-18553206533/5EgMCLfk97EdEIXu7Y5F'});
+  } else if (/wa\.me|whatsapp\.com/i.test(h)) {
+    gtag('event', 'conversion', {send_to: 'AW-18553206533/ioPLCKWI-LEdEIXu7Y5F'});
+  }
+}, true);
+</script>
 </head>
 <body>
 <header class="top">
