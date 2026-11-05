@@ -15,9 +15,9 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Your first implant consultation", "description": "Dr Pushkar Sobti, implantologist in Delhi, explains what happens at a first dental implant consultation: the conversation, the medical history, the examination, the CBCT scan, and the questions worth asking.", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "mainEntityOfPage": "https://dentalimplantsdelhi.com/blog/dental-implant-consultation/", "url": "https://dentalimplantsdelhi.com/blog/dental-implant-consultation/", "image": "https://dentalimplantsdelhi.com/images/dr-pushkar-sobti-implant-surgery.jpg", "inLanguage": "en-IN", "isPartOf": {"@type": "Blog", "name": "The Implant Story", "url": "https://dentalimplantsdelhi.com/#blog"}, "author": {"@type": "Person", "@id": "https://dentalimplantsdelhi.com/#drpushkar", "name": "Dr Pushkar Sobti", "url": "https://dentalimplantsdelhi.com/"}, "publisher": {"@type": "Person", "@id": "https://dentalimplantsdelhi.com/#drpushkar", "name": "Dr Pushkar Sobti"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does a dental implant consultation take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how much needs to be looked at. The conversation, the examination and a CBCT scan usually all happen on the same visit, so it's best not to book anything straight after."}}, {"@type": "Question", "name": "What should I bring to my implant consultation?", "acceptedAnswer": {"@type": "Answer", "text": "A list of every medicine you take, any recent blood reports if you have diabetes or another condition, and any old X-rays or scans. Bring your questions written down too."}}, {"@type": "Question", "name": "Can I have a consultation online before coming to Delhi?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Send your X-ray or CBCT scan and a few photos on WhatsApp for a free online assessment. I reply personally within 24 hours with an explanation and a plan."}}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400&display=swap">
 <style>
-/* BRAND COLOURS: Dr Sobti's Dental Care blue #1A4EA2 and gold #FBAE49, from the clinic stylescape. */
+/* BRAND COLOURS: Dr Sobti's Dental Care blue #1E4EA2 and gold #F0B04F, with Fraunces + Manrope, shared with sobtidentalcare.com and drparulssobti.com. */
 /* Layout: one quiet column, wide margins, a thin spec rail of mono labels on the left like a clinical chart. */
 :root {
   --bg: #f7f8fb;
@@ -25,27 +25,27 @@
   --ink: #131a2a;
   --muted: #566074;
   --line: #dfe4ee;
-  --accent: #1a4ea2;
-  --accent-deep: #133b7c;
-  --logo: #1a4ea2;
-  --gold: #fbae49;
+  --accent: #1e4ea2;
+  --accent-deep: #143a7d;
+  --logo: #1e4ea2;
+  --gold: #f0b04f;
   --mark: #fff3d1;
   --mark-ink: #7a5300;
-  --display: "Newsreader", Georgia, "Times New Roman", serif;
-  --body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
   --w: 68rem;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0e1320; --surface: #151b2b; --ink: #e9edf5; --muted: #9ba6bc;
-    --line: #26304a; --accent: #8fb0ea; --accent-deep: #b4cbf2; --logo: #8fb0ea; --gold: #fbae49; --mark: #3a2f12; --mark-ink: #f1cf7a;
+    --line: #26304a; --accent: #8fb0ea; --accent-deep: #b4cbf2; --logo: #8fb0ea; --gold: #f0b04f; --mark: #3a2f12; --mark-ink: #f1cf7a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e1320; --surface: #151b2b; --ink: #e9edf5; --muted: #9ba6bc;
-  --line: #26304a; --accent: #8fb0ea; --accent-deep: #b4cbf2; --logo: #8fb0ea; --gold: #fbae49; --mark: #3a2f12; --mark-ink: #f1cf7a;
+  --line: #26304a; --accent: #8fb0ea; --accent-deep: #b4cbf2; --logo: #8fb0ea; --gold: #f0b04f; --mark: #3a2f12; --mark-ink: #f1cf7a;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -64,7 +64,7 @@ body {
 @media (min-width: 720px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { font-family: var(--display); font-weight: 300; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
 h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.04; }
 h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.1; }
 h3 { font-family: var(--body); font-weight: 500; font-size: 1.05rem; letter-spacing: 0; }
@@ -107,7 +107,7 @@ section { padding-block: clamp(4rem, 9vw, 7rem); border-bottom: 1px solid var(--
 .spec b { color: var(--accent); }
 .spec { display: flex; flex-wrap: wrap; gap: .5rem 2.5rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .spec div { display: flex; flex-direction: column; gap: .15rem; }
-.spec b { font-family: var(--display); font-weight: 300; font-size: 1.9rem; font-variant-numeric: tabular-nums; }
+.spec b { font-family: var(--display); font-weight: 500; font-size: 1.9rem; font-variant-numeric: tabular-nums; }
 
 /* lists */
 .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
@@ -144,7 +144,7 @@ section { padding-block: clamp(4rem, 9vw, 7rem); border-bottom: 1px solid var(--
 .posts li.next .t { font-weight: 500; }
 @media (max-width: 600px) { .posts li { grid-template-columns: 2.2rem minmax(0, 1fr); } .posts .d { grid-column: 2; } .posts .t { grid-column: 2; } .posts .st { grid-column: 2; } }
 .featured { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: clamp(1.4rem, 4vw, 2.4rem); display: flex; flex-direction: column; gap: 1rem; }
-.featured h3 { font-family: var(--display); font-weight: 300; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; }
+.featured h3 { font-family: var(--display); font-weight: 500; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; }
 .featured .body { display: flex; flex-direction: column; gap: .9rem; color: var(--ink); }
 .featured details summary { cursor: pointer; color: var(--accent); }
 
