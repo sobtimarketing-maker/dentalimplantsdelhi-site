@@ -34,6 +34,16 @@ document.addEventListener('click', function (e) {
   }
 }, true);
 </script>
+<style id="wa-float-css">
+.wa-float { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 20; display: inline-flex; align-items: center; gap: .5rem; padding: .8rem; border-radius: 999px; background: #25d366; color: #fff; text-decoration: none; font: 600 .95rem/1 "Manrope", system-ui, sans-serif; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+.wa-float:hover { background: #1ebe5a; }
+.wa-float:focus-visible { outline: 3px solid #f0b04f; outline-offset: 3px; }
+.wa-float svg { width: 1.75rem; height: 1.75rem; flex: none; }
+.wa-float span { display: none; padding-right: .3rem; }
+@media (min-width: 720px) { .wa-float span { display: inline; } }
+footer { padding-bottom: 6rem; }
+@media print { .wa-float { display: none; } }
+</style>
 </head>
 <body>
 <main>
@@ -43,5 +53,7 @@ document.addEventListener('click', function (e) {
   <p>You are now on the site of Dr Pushkar Sobti, All-on-X implantologist in Delhi.</p>
   <p><a href="/">Go to the home page</a> &middot; <a href="/#blog">Read The Implant Story</a> &middot; <a href="/#contact">Book a consultation</a></p>
 </main>
+<!-- whatsapp-float: same button on every page; WhatsApp +91 80767 77307 -->
+<a class="wa-float" href="https://wa.me/918076777307?text=Hi%2C%20I%20found%20you%20on%20dentalimplantsdelhi.com%20and%20would%20like%20to%20ask%20about%20dental%20implants." aria-label="Chat on WhatsApp, +91 80767 77307"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.08 3 3.43 8.64 3.43 15.6c0 2.22.58 4.39 1.69 6.3L3.33 28.5l6.78-1.78a12.55 12.55 0 0 0 5.93 1.5h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.5 12.5 0 0 0 16.04 3Zm0 23.09h-.01a10.47 10.47 0 0 1-5.34-1.46l-.38-.23-4.02 1.06 1.07-3.92-.25-.4a10.43 10.43 0 0 1-1.6-5.55c0-5.78 4.71-10.48 10.5-10.48 2.8 0 5.43 1.09 7.41 3.07a10.42 10.42 0 0 1 3.07 7.42c0 5.78-4.71 10.49-10.45 10.49Zm5.75-7.85c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.31-.16-1.33-.49-2.53-1.56-.93-.83-1.56-1.86-1.75-2.17-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62 0 1.55 1.13 3.04 1.28 3.25.16.21 2.22 3.38 5.37 4.74.75.32 1.34.52 1.8.66.75.24 1.44.21 1.98.13.6-.09 1.86-.76 2.12-1.5.26-.73.26-1.36.18-1.5-.08-.13-.29-.21-.6-.37Z"/></svg><span>WhatsApp us</span></a>
 </body>
 </html>
