@@ -36,6 +36,7 @@ jobs:
           }
           redirect home /
           redirect blog /#blog
+          redirect immediate-dental-implants-delhi /videos/#v-LQ7iloK2d2s
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
