@@ -44,6 +44,31 @@ document.addEventListener('click', function (e) {
 footer { padding-bottom: 6rem; }
 @media print { .wa-float { display: none; } }
 </style>
+<script>
+/* Old Google profile posts (2025) still link to /latest-update/... pages from the previous site.
+   Send those visitors to the matching page on the current sites. The page still answers 404 to crawlers. */
+(function () {
+  var p = location.pathname.toLowerCase();
+  if (p.indexOf('/latest-update/') !== 0) return;
+  var hub = 'https://www.sobtidentalcare.com/';
+  var map = [
+    [/basal/, '/basal-implants-delhi/'],
+    [/full-mouth/, '/full-mouth-dental-implants-delhi/'],
+    [/same-day|immediate/, '/same-day-dental-implants-delhi/'],
+    [/implant|osstem/, '/'],
+    [/pulpectomy/, hub + 'kids-dentist-delhi.html'],
+    [/apicoectomy|post-core|root-canal/, hub + 'root-canal-cost-delhi.html'],
+    [/bridge/, hub + 'dental-bridge-delhi.html'],
+    [/crown/, hub + 'zirconia-crowns-delhi.html'],
+    [/laminate|veneer|smile/, 'https://drparulssobti.com/veneers.html'],
+    [/dental-lab/, hub + 'lab.html']
+  ];
+  for (var i = 0; i < map.length; i++) {
+    if (map[i][0].test(p)) { location.replace(map[i][1]); return; }
+  }
+  location.replace('/');
+})();
+</script>
 <script src="/ad-visitor.js" defer></script>
 </head>
 <body>
